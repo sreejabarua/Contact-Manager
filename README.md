@@ -16,7 +16,7 @@ Tech: Python, Flask, SQL, HTML, CSS
 -Make sure all files are in respective folders
 
 -Install flask if needed : pip install flask
-      
+
 - save and run: python app.py
 
 - Open your browser and search: http://127.0.0.1:5000/
