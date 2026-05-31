@@ -1,8 +1,17 @@
-Contact Manager Application:
+**Contact Manager Application:**
 
 Tech: Python, Flask, SQL, HTML, CSS
 
-Instructions to run:
+**Purpose:** 
+
+Database Contact Management system that allows users to store and manage their personal contacts
+
+
+**Functions:** 
+
+Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
+
+**Instructions to run:**
 
 -Download the files as a Zip or clone repository
 
