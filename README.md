@@ -3,11 +3,11 @@
 Tech: Python, Flask, SQL, HTML, CSS
 
 ## **Purpose:** 
-      ·Database Contact Management system that allows users to store and manage their personal contacts
+·Database Contact Management system that allows users to store and manage their personal contacts
 
 
 ## **Functions:** 
-      ·Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
+·Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
 
 ## **Instructions to run:**
 
