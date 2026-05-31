@@ -2,16 +2,14 @@
 
 Tech: Python, Flask, SQL, HTML, CSS
 
-**Purpose:** 
-
+## **Purpose:** 
 Database Contact Management system that allows users to store and manage their personal contacts
 
 
-**Functions:** 
-
+## **Functions:** 
 Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
 
-**Instructions to run:**
+## **Instructions to run:**
 
 -Download the files as a Zip or clone repository
 
