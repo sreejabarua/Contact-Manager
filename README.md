@@ -1,4 +1,4 @@
-#**Contact Manager Application:**
+## **Contact Manager Application:**
 
 Tech: Python, Flask, SQL, HTML, CSS
 
