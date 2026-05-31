@@ -3,6 +3,7 @@ Contact Manager Application:
 Tech: Python, Flask, SQL, HTML, CSS
 
 Instructions to run:
+
 -Download the files as a Zip or clone repository
 
 -Make sure all files are in respective folders
