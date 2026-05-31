@@ -3,11 +3,11 @@
 Tech: Python, Flask, SQL, HTML, CSS
 
 ## **Purpose:** 
-·Database Contact Management system that allows users to store and manage their personal contacts
+· Database Contact Management system that allows users to store and manage their personal contacts
 
 
 ## **Functions:** 
-·Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
+· Add, Delete, Search, Edit, Authenticator, Account Creation, Profile Image Upload and Storage
 
 ## **Instructions to run:**
 
@@ -15,9 +15,11 @@ Tech: Python, Flask, SQL, HTML, CSS
 
 -Make sure all files are in respective folders
 
--Install flask if needed (pip install flask)
+-Install flask if needed 
+      ```pip install flask```
       
 - save and run: python app.py
 
-- Open your browser and go to: http://127.0.0.1:5000/
+- Open your browser and go to:
+        ```http://127.0.0.1:5000/```
 
