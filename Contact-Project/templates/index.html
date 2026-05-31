@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/5d7aa1d572.js" crossorigin="anonymous" defer></script>
+    
+</head>
+<body>
+
+    <h1>Contact Manager</h1>
+
+    <!-- ADD CONTACT FORM -->
+    <h2>Add New Contact</h2>
+
+    <form action="/add" method="POST" enctype="multipart/form-data">
+
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="address" placeholder="Address">
+        <input type="text" name="birthday" placeholder="Birthday (MM/DD/YYYY)">
+        <input type="number" name="age" placeholder="Age">
+        <input type="text" name="notes" placeholder="Qualities / Notes">
+        <label>Profile Picture:</label>
+        <input type="file" name="profile_pic" accept="image/*"><br><br>
+
+        <button type="submit">Add Contact</button>
+
+    </form>
+
+    <hr>
+
+    <!-- SEARCH -->
+    <h2>Search</h2>
+
+    <form action="/" method="GET">
+        <input type="text" name="search" placeholder="Search contacts...">
+
+        <button type="submit">
+            Search
+        </button>
+    </form>
+
+    <br>
+
+    {% if request.args.get("search") %}
+        <a href="/">
+            <button>
+                Show All Contacts
+            </button>
+        </a>
+    {% endif %}
+
+    <hr>
+
+    <!-- CONTACT LIST -->
+    <h2>My Contacts</h2>
+
+    <div class="contacts-container">
+
+        {% for contact in contacts %}
+
+        <div class="contact-card">
+
+            <!-- PROFILE PICTURE -->
+            {% if contact.profile_pic %}
+                <img
+                    src="{{ url_for('static', filename=contact.profile_pic) }}"
+                    class="pfp-img"
+                    alt="Profile Picture">
+            {% else %}
+                <div class="pfp">
+                    {{ contact.name.split()[0][0] }}{{ contact.name.split()[-1][0] if ' ' in contact.name else '' }}
+                </div>
+            {% endif %}
+
+            <!-- NAME -->
+            <h3>
+                <a href="/contact/{{ contact.id }}">
+                    {{ contact.name }}
+                </a>
+            </h3>
+
+            <!-- CONTACT INFO -->
+            <p><i class="fa-solid fa-phone"></i><strong>  Phone:</strong> {{ contact.phone }}</p>
+            <p><i class="fa-regular fa-envelope"></i><strong>  Email:</strong> {{ contact.email }}</p>
+            <p><i class="fa-solid fa-house"></i><strong>  Address:</strong> {{ contact.address }}</p>
+
+            <!-- BUTTONS -->
+            <a href="/edit/{{ contact.id }}">
+                <button>Edit</button>
+            </a>
+
+            <a href="/delete/{{ contact.id }}">
+                <button style="background:red; color:white;">
+                    Delete
+                </button>
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+    <br><br><br>
+    <a href="/logout">
+    <button>Logout</button>
+</a>
+
+</body>
+</html>

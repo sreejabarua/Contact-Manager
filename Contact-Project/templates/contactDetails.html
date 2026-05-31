@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ contact.name }}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/">
+        <button>← Back</button>
+    </a>
+
+    <div class="contact-detail-card">
+
+        {% if contact.profile_pic %}
+            <img
+                src="{{ url_for('static', filename=contact.profile_pic) }}"
+                class="detail-pfp"
+                alt="Profile Picture">
+        {% else %}
+            <div class="detail-pfp-initials">
+                {{ contact.name.split()[0][0] }}{{ contact.name.split()[-1][0] if ' ' in contact.name else '' }}
+            </div>
+        {% endif %}
+
+        <h1>{{ contact.name }}</h1>
+
+        <hr>
+
+    <p>Phone: {{ contact.phone }}</p>
+    <p>Email: {{ contact.email }}</p>
+    <p>Address: {{ contact.address }}</p>
+    <p>Birthday: {{ contact.birthday }}</p>
+    <p>Age: {{ contact.age }}</p>
+    <p>Notes: {{ contact.notes }}</p>
+
+    <a href="/edit/{{ contact.id }}">
+            <button>Edit</button>
+    </a>
+
+    <a href="/delete/{{ contact.id }}">
+        <button style="background:red; color:white;">
+            Delete
+        </button>
+    </a>
+
+</body>
+</html>

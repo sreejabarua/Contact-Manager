@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Contact</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/">
+        <button>← Back</button>
+    </a>
+
+   
+
+
+    <h1>Edit Contact</h1>
+
+    <div class="edit-container">
+
+        <form action="/update/{{ contact.id }}" method="POST" enctype="multipart/form-data">
+
+            {% if contact.profile_pic %}
+                <img
+                    src="{{ url_for('static', filename=contact.profile_pic) }}" class="pfp-img" alt="Profile Picture">
+                <br><br>
+            {% endif %}
+        <div class="edit-container-text">
+        <input type="text" name="name" value="{{ contact.name }}"><br>
+        <input type="text" name="phone" value="{{ contact.phone }}"><br>
+        <input type="email" name="email" value="{{ contact.email }}"><br>
+        <input type="text" name="address" value="{{ contact.address }}"><br>
+        <input type="text" name="birthday" value="{{ contact.birthday }}"><br>
+        <input type="number" name="age" value="{{ contact.age }}"><br>
+        <input type="text" name="notes" value="{{ contact.notes }}"><br>
+        <label>Change Profile Picture:</label><br>
+        <input type="file" name="profile_pic" accept="image/*"><br>
+        </div>
+
+        <button type="submit">Done</button>
+
+    </form>
+</div>
+
+</body>
+</html>
